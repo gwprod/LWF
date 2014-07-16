@@ -22,4 +22,19 @@ abstract class ORMObject
   }
   abstract protected function schema();
   
+  protected function buildTable()
+  {
+    $schema = self::schema();
+    $base_table = self::$base_table;
+    if(Database::table_exists($base_table))
+    {
+      foreach($schema as $column_name => $column)
+      {
+        if(!Database::field_exists($base_table, $column_name))
+        {
+          
+        }
+      }
+    }
+  }
 }
