@@ -4,7 +4,7 @@ require_once 'database/database.inc';
 require_once 'database/orm_object.inc';
 require_once 'session.inc';
 require_once 'user.inc';
-function init() {
+function bootstrap_init() {
   conf_init();
   Database::getInstance();
   session_init();
@@ -19,7 +19,7 @@ function lwf_die($message)
   cleanup();
   die($message);
 }
-function cleanup()
+function bootstrap_cleanup()
 {
   session_cleanup();
 }

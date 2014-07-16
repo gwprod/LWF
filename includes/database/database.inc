@@ -65,10 +65,6 @@ class Database {
 
     return Database::db_query('SELECT 1 FROM information_schema.columns WHERE table_name = :table_name and column_name = :column_name', array(':table_name' => $table_name, ':column_name' => $field_name))->fetchField();
   }
-  public static function field_create($table_name, $field_definition)
-  {
-    Database::db_query('ALTER table :table ADD ')
-  }
 
   /**
    * Get the instance of the Database object.
@@ -169,8 +165,7 @@ class SelectQuery {
       $stmt->bindValue($key, $condition['value']);
     }
     $stmt->execute();
-    $result = $stmt->fetchAll()
-    return $result;
+    return $stmt;
   }
 
   public function condition($conditon, $value = null, $type = null) {
