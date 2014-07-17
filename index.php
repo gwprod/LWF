@@ -1,5 +1,4 @@
 <?php
 define('SITE_ROOT', getcwd());
-require_once 'conf.inc';
-require_once 'includes/bootstrap.inc';
+require_once 'framework/includes/bootstrap.inc';
 bootstrap_init();
